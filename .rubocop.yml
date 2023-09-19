@@ -1,0 +1,48 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "db/**/*"
+    - "bin/**/*"
+    - "config/**/*"
+    - "vendor/**/*"
+    - "config.ru"
+    - "spec/rails_helper.rb"
+    - "spec/spec_helper.rb"
+
+Metrics/MethodLength:
+  Description: "Avoid methods longer than 5 lines of code."
+  Max: 5
+  Enabled: true
+
+Metrics/ClassLength:
+  Description: "Avoid classes longer than 100 lines of code."
+  Max: 100
+  Enabled: true
+
+Metrics/ModuleLength:
+  Description: "Avoid modules longer than 100 lines of code."
+  Max: 100
+  Enabled: true
+
+Metrics/CyclomaticComplexity:
+  Enabled: true
+
+Metrics/PerceivedComplexity:
+  Enabled: true
+
+Metrics/AbcSize:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false

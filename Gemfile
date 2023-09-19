@@ -40,6 +40,10 @@ group :development, :test do
   gem 'mongoid-rspec', '~> 4.1'
   gem 'pry-byebug', '~> 3.10', '>= 3.10.1'
   gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
+  gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :development do
