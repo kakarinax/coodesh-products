@@ -1,10 +1,8 @@
 class Product
   include Mongoid::Document
-  include Mongoid::Enum
-  include Mongoid::Timestamps
 
-  enum status: %i[draft published trash], null: false
-  field :imported_t, type: DateTime, null: false
+  field :status, type: StatusEnum
+  field :imported_t, type: DateTime
   field :code, type: Integer
   field :url, type: String
   field :creator, type: String
