@@ -13,6 +13,7 @@ AllCops:
     - "config.ru"
     - "spec/rails_helper.rb"
     - "spec/spec_helper.rb"
+    - "spec/model/product_spec.rb"
 
 Metrics/MethodLength:
   Description: "Avoid methods longer than 5 lines of code."
