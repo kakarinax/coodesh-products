@@ -22,5 +22,5 @@ class Product
   field :main_category, type: String
   field :image_url, type: String
 
-  validates :imported_t, presence: true
+  validates :imported_t, :status, :code, presence: true
 end

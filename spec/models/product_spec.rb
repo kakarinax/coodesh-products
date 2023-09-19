@@ -32,5 +32,13 @@ RSpec.describe Product, type: :model do
         expect { product.save! }.to raise_error(Mongoid::Errors::Validations)
       end
     end
+
+    context 'when product is created without code' do
+      let(:product) { build(:product, code: nil) }
+
+      it 'raises validation error' do
+        expect { product.save! }.to raise_error(Mongoid::Errors::Validations)
+      end
+    end
   end
 end
