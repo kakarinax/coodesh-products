@@ -16,5 +16,21 @@ RSpec.describe Product, type: :model do
         expect(product.imported_t).not_to be_nil
       end
     end
+
+    context 'when product is created with invalid status' do
+      let(:product) { build(:product, :with_invalid_status) }
+
+      it 'raises validation error' do
+        expect { product.save! }.to raise_error(ValidationError)
+      end
+    end
+
+    context 'when product is created without imported_t' do
+      let(:product) { build(:product, imported_t: nil) }
+
+      it 'raises validation error' do
+        expect { product.save! }.to raise_error(Mongoid::Errors::Validations)
+      end
+    end
   end
 end
