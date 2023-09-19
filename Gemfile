@@ -26,8 +26,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-gem 'mongoid', '~> 7.3.5'
-gem 'mongoid-enum', git: 'https://github.com/choilive/mongoid-enum.git'
+gem 'mongoid', '~> 8.0.6'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
