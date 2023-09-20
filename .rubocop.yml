@@ -15,6 +15,10 @@ AllCops:
     - "spec/spec_helper.rb"
     - "spec/model/product_spec.rb"
 
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - "spec/requests/**/*"
+
 Metrics/MethodLength:
   Description: "Avoid methods longer than 5 lines of code."
   Max: 5

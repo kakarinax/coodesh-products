@@ -27,9 +27,12 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 gem 'mongoid', '~> 8.0.6'
+gem 'pagy', '~> 6.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
+gem 'rswag-api'
+gem 'rswag-ui'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -40,6 +43,7 @@ group :development, :test do
   gem 'mongoid-rspec', '~> 4.1'
   gem 'pry-byebug', '~> 3.10', '>= 3.10.1'
   gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
+  gem 'rswag-specs'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
