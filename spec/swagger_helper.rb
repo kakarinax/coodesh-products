@@ -24,14 +24,47 @@ RSpec.configure do |config|
       paths: {},
       servers: [
         {
-          url: 'https://{defaultHost}',
-          variables: {
-            defaultHost: {
-              default: 'www.example.com'
+          url: 'http://localhost:3000',
+          description: 'Development server'
+        },
+        {
+          url: 'http://test.host/api/v1',
+          description: 'Test server'
+        }
+      ],
+      components: {
+        schemas: {
+          product: {
+            type: :object,
+            properties: {
+              _id: { type: :object,
+                     properties: {
+                       oid: { type: :string }
+                     } },
+              code: { type: :integer },
+              imported_t: { type: :string, format: :date_time },
+              status: { type: :string },
+              url: { type: :string },
+              creator: { type: :string },
+              product_name: { type: :string },
+              quantity: { type: :string },
+              brands: { type: :string },
+              categories: { type: :string },
+              labels: { type: :string },
+              cities: { type: :string },
+              purchase_places: { type: :string },
+              stores: { type: :string },
+              ingredients_text: { type: :string },
+              traces: { type: :string },
+              serving_size: { type: :string },
+              serving_quantity: { type: :number },
+              nutriscore_score: { type: :integer },
+              main_category: { type: :string },
+              image_url: { type: :string }
             }
           }
         }
-      ]
+      }
     }
   }
 
@@ -39,5 +72,6 @@ RSpec.configure do |config|
   # The swagger_docs configuration option has the filename including format in
   # the key, this may want to be changed to avoid putting yaml in json files.
   # Defaults to json. Accepts ':json' and ':yaml'.
+
   config.swagger_format = :yaml
 end
