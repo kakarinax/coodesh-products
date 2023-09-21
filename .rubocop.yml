@@ -19,6 +19,9 @@ RSpec/EmptyExampleGroup:
   Exclude:
     - "spec/requests/**/*"
 
+RSpec/SpecFilePathFormat:
+  Enabled: false
+
 Metrics/MethodLength:
   Description: "Avoid methods longer than 5 lines of code."
   Max: 5
