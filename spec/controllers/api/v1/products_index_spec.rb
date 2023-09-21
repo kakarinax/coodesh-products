@@ -1,5 +1,5 @@
 RSpec.describe Api::V1::ProductsController do
-  describe 'GET #index', swagger_doc: 'v1/swagger.yaml' do
+  describe 'GET #index' do
     let(:request) { get :index }
 
     context 'when there are products' do
