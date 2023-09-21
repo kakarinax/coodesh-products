@@ -10,6 +10,13 @@ module Api
         render json: { message: 'No products found' }, status: :not_found if @products.empty?
         render json: @products, status: :ok unless @products.empty?
       end
+
+      def show
+        @product = Product.find_by(code: params[:code])
+
+        render json: { message: 'Product not found' }, status: :not_found unless @product
+        render json: @product, status: :ok if @product
+      end
     end
   end
 end
