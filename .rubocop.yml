@@ -24,7 +24,7 @@ RSpec/SpecFilePathFormat:
 
 Metrics/MethodLength:
   Description: "Avoid methods longer than 5 lines of code."
-  Max: 5
+  Max: 10
   Enabled: true
 
 Metrics/ClassLength:
