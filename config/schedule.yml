@@ -1,0 +1,4 @@
+import_files:
+  cron: "0 4 * * *" # At 4:00 everyday.
+  class: "ImportFilesWorker"
+  queue: "default"
