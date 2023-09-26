@@ -26,6 +26,18 @@ module Api
         product_update_status
       end
 
+      def update
+        @product = Product.find_by(code: params[:code])
+
+        return render json: { message: 'Product not found' }, status: :not_found unless @product
+
+        if @product.update!(product_params)
+          render json: @product, status: :ok
+        else
+          render json: { message: 'Product could not be updated' }, status: :unprocessable_entity
+        end
+      end
+
       private
 
       def product_update_status
