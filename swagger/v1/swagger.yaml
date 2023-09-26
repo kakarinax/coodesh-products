@@ -1,0 +1,136 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1":
+    get:
+      summary: list api_status and db status
+      tags:
+      - ApiStatus
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  db_status:
+                    type: string
+        '500':
+          description: internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  db_status:
+                    type: string
+  "/api/v1/products":
+    get:
+      summary: list products
+      tags:
+      - Products
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/product"
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  "/api/v1/products/{code}":
+    get:
+      summary: show product
+      tags:
+      - Products
+      parameters:
+      - name: code
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/product"
+        '404':
+          description: not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+servers:
+- url: http://localhost:3000
+  description: Development server
+- url: http://test.host/api/v1
+  description: Test server
+components:
+  schemas:
+    product:
+      type: object
+      properties:
+        _id:
+          type: object
+          properties:
+            oid:
+              type: string
+        code:
+          type: integer
+        imported_t:
+          type: string
+          format: date_time
+        status:
+          type: string
+        url:
+          type: string
+        creator:
+          type: string
+        product_name:
+          type: string
+        quantity:
+          type: string
+        brands:
+          type: string
+        categories:
+          type: string
+        labels:
+          type: string
+        cities:
+          type: string
+        purchase_places:
+          type: string
+        stores:
+          type: string
+        ingredients_text:
+          type: string
+        traces:
+          type: string
+        serving_size:
+          type: string
+        serving_quantity:
+          type: number
+        nutriscore_score:
+          type: integer
+        main_category:
+          type: string
+        image_url:
+          type: string
