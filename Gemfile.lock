@@ -127,6 +127,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    memory_profiler (1.0.1)
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
@@ -306,6 +307,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2)
   faker (~> 3.2, >= 3.2.1)
   faraday
+  memory_profiler
   mongoid (~> 8.0.6)
   mongoid-rspec (~> 4.1)
   pagy (~> 6.0)

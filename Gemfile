@@ -31,6 +31,7 @@ gem 'pagy', '~> 6.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'faraday'
+gem 'memory_profiler'
 gem 'rack-cors'
 gem 'rswag-api'
 gem 'rswag-ui'
